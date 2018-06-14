@@ -8,6 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ryota Ikezawa"]
   spec.email         = ["pavegy@gmail.com"]
 
+  spec.summary       = %q{API Client for flicker.}
   spec.description   = %q{API Client for flicker.}
   spec.license       = "MIT"
 
@@ -23,4 +24,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.16.2"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "rubocop", "~> 0.57"
 end
