@@ -3,14 +3,13 @@
 require 'flickrb/version'
 require 'flickrb/client'
 require 'flickrb/configuration'
-require 'pry'
+require 'flickrb/ext/hash'
 
 module Flickrb
   class << self
     include Flickrb::Configuration
 
     def client
-      binding.pry
       unless defined?(@client) && @client.hash == options.hash
         @client = Flickrb::Client.new(options)
       end
