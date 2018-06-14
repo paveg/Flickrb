@@ -42,6 +42,8 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
+    rspec_junit_formatter (0.4.1)
+      rspec-core (>= 2, < 4, != 2.12.0)
     rubocop (0.57.2)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -52,6 +54,7 @@ GEM
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.9.0)
     unicode-display_width (1.4.0)
+    yard (0.9.14)
 
 PLATFORMS
   ruby
@@ -61,10 +64,13 @@ DEPENDENCIES
   faraday (~> 0.15)
   faraday_middleware (~> 0.12)
   flickrb!
+  pry
   pry-byebug (~> 3.6)
   rake (~> 10.0)
-  rspec (~> 3.0)
+  rspec
+  rspec_junit_formatter
   rubocop (~> 0.57)
+  yard
 
 BUNDLED WITH
    1.16.2

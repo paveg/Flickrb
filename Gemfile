@@ -2,7 +2,15 @@
 
 source 'https://rubygems.org'
 
-git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
+group :development do
+  gem 'yard'
+  gem 'pry'
+end
+
+group :test do
+  gem 'rspec'
+  gem 'rspec_junit_formatter'
+end
 
 # Specify your gem's dependencies in flickrb.gemspec
 gemspec
