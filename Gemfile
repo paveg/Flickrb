@@ -10,6 +10,8 @@ end
 group :test do
   gem 'rspec'
   gem 'rspec_junit_formatter'
+  gem 'danger', require: false
+  gem 'danger-lgtm', require: false
 end
 
 # Specify your gem's dependencies in flickrb.gemspec
