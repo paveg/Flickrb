@@ -1,28 +1,29 @@
-lib = File.expand_path("../lib", __FILE__)
+# frozen_string_literal: true
+
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "flickrb/version"
+require 'flickrb/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "flickrb"
-  spec.version       = Flickrb::VERSION
-  spec.authors       = ["Ryota Ikezawa"]
-  spec.email         = ["pavegy@gmail.com"]
-
-  spec.summary       = %q{API Client for flicker.}
-  spec.description   = %q{API Client for flicker.}
-  spec.license       = "MIT"
+  spec.name        = 'flickrb'
+  spec.version     = Flickrb::VERSION
+  spec.authors     = ['Ryota Ikezawa']
+  spec.email       = ['pavegy@gmail.com']
+  spec.summary     = 'API Client for flicker.'
+  spec.description = 'API Client for flicker.'
+  spec.license     = 'MIT'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
-  spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
-    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files = Dir.chdir(File.expand_path(__dir__)) do
+    `git ls-files -z`.split("\x0").reject { |f| f.match?(%r{^(test|spec|features)/}) }
   end
-  spec.bindir        = "exe"
+  spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
 
-  spec.add_development_dependency "bundler", "~> 1.16.2"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "rubocop", "~> 0.57"
+  spec.add_development_dependency 'bundler', '~> 1.16.2'
+  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rspec', '~> 3.0'
+  spec.add_development_dependency 'rubocop', '~> 0.57'
 end
