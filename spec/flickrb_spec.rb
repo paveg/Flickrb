@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Flickrb do
@@ -14,16 +16,16 @@ describe Flickrb do
       subject { hash.deep_symbolize_keys }
       let(:hash) do
         {
-          key:  [{moge: 10}],
-          hoge: [{hoge: [42]}],
-          moge: [10, 20, {:hoge => 30}]
+          key:  [{ moge: 10 }],
+          hoge: [{ hoge: [42] }],
+          moge: [10, 20, { hoge: 30 }]
         }
       end
       let(:convert_hash) do
         {
-          key:  [{moge: 10}],
-          hoge: [{hoge: [42]}],
-          moge: [10, 20, {hoge: 30}]
+          key:  [{ moge: 10 }],
+          hoge: [{ hoge: [42] }],
+          moge: [10, 20, { hoge: 30 }]
         }
       end
 
