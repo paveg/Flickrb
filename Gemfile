@@ -12,6 +12,7 @@ group :test do
   gem 'danger-lgtm', require: false
   gem 'rspec'
   gem 'rspec_junit_formatter'
+  gem 'simplecov', require: false
 end
 
 # Specify your gem's dependencies in flickrb.gemspec
