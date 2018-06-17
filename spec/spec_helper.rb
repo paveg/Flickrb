@@ -11,7 +11,10 @@ if ENV['CIRCLE_ARTIFACTS']
 else
   SimpleCov.coverage_dir('public/coverage')
 end
-SimpleCov.start
+
+SimpleCov.start do
+  %w[/vendor/ /spec/].each { |dir| add_filter(dir) }
+end
 
 def fixture_path
   File.expand_path('fixtures', __dir__)

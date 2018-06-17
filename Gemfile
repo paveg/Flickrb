@@ -8,6 +8,7 @@ group :development do
 end
 
 group :test do
+  gem 'codeclimate-test-reporter', require: false
   gem 'danger', require: false
   gem 'danger-lgtm', require: false
   gem 'rspec'
