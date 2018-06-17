@@ -9,6 +9,9 @@ jobs:
       # specify the version you desire here
        - image: circleci/ruby:2.5.1-node-browsers
 
+    environment:
+      - CIRCLE_ARTIFACTS: "/tmp/test-results"
+
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
@@ -39,12 +42,12 @@ jobs:
       - run:
           name: run tests
           command: |
-            mkdir /tmp/test-results
+            mkdir $CIRCLE_ARTIFACTS
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
-
+            echo $CIRCLE_ARTIFACTS
             bundle exec rspec --format progress \
                             --format RspecJunitFormatter \
-                            --out /tmp/test-results/rspec.xml \
+                            --out $CIRCLE_ARTIFACTS/rspec.xml \
                             --format progress \
                             $TEST_FILES
       # collect reports

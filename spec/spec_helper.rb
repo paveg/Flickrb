@@ -7,8 +7,9 @@ require 'simplecov'
 require 'pry'
 
 if ENV['CIRCLE_ARTIFACTS']
-  dir = File.join(ENV['CIRCLE_ARTIFACTS'], 'coverage')
-  SimpleCov.coverage_dir(dir)
+  SimpleCov.coverage_dir(File.join(ENV['CIRCLE_ARTIFACTS'], 'coverage'))
+else
+  SimpleCov.coverage_dir('public/coverage')
 end
 SimpleCov.start
 
