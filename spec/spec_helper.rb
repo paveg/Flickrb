@@ -3,7 +3,18 @@
 $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 require 'bundler/setup'
 require 'flickrb'
+require 'simplecov'
 require 'pry'
+
+if ENV['CIRCLE_ARTIFACTS']
+  SimpleCov.coverage_dir(File.join(ENV['CIRCLE_ARTIFACTS'], 'coverage'))
+else
+  SimpleCov.coverage_dir('public/coverage')
+end
+
+SimpleCov.start do
+  %w[/vendor/].each { |dir| add_filter(dir) }
+end
 
 def fixture_path
   File.expand_path('fixtures', __dir__)
