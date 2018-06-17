@@ -1,4 +1,5 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/4c2650addf8e32680290/test_coverage)](https://codeclimate.com/github/paveg/Flickrb/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4c2650addf8e32680290/maintainability)](https://codeclimate.com/github/paveg/Flickrb/maintainability)
 
 # Flickrb
 
