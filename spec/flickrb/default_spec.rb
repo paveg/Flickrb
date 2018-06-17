@@ -20,7 +20,6 @@ describe Flickrb::Default do
     context 'set value' do
       before { ENV['FLICKR_CLIENT_KEY'] = 'test' }
       it 'returns the ENV value' do
-
         is_expected.to eq('test')
       end
     end
@@ -37,7 +36,6 @@ describe Flickrb::Default do
     context 'set value' do
       before { ENV['FLICKR_CLIENT_SECRET'] = 'test' }
       it 'returns the ENV value' do
-
         is_expected.to eq('test')
       end
     end
