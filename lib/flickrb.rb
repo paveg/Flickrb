@@ -3,7 +3,7 @@
 require 'flickrb/version'
 require 'flickrb/client'
 require 'flickrb/configuration'
-require 'flickrb/ext/hash'
+require 'active_support/core_ext/hash'
 
 module Flickrb
   class << self
