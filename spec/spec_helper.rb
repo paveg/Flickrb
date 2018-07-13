@@ -16,6 +16,11 @@ SimpleCov.start do
   %w[/vendor/].each { |path| add_filter(path) }
 end
 
+if ENV.fetch('CI', 'false') == 'true'
+  require 'codecov'
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
+end
+
 def fixture_path
   File.expand_path('fixtures', __dir__)
 end

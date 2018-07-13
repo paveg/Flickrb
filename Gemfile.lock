@@ -3,8 +3,14 @@ PATH
   specs:
     flickrb (0.1.0)
       activesupport
+      codeclimate-test-reporter
+      codecov
+      danger
+      danger-lgtm
       faraday (~> 0.15)
       faraday_middleware (~> 0.12)
+      rspec_junit_formatter
+      simplecov
 
 GEM
   remote: https://rubygems.org/
@@ -25,6 +31,10 @@ GEM
       open4 (~> 1.3)
     codeclimate-test-reporter (1.0.8)
       simplecov (<= 0.13)
+    codecov (0.1.10)
+      json
+      simplecov
+      url
     coderay (1.1.2)
     colored2 (3.1.2)
     concurrent-ruby (1.0.5)
@@ -119,6 +129,7 @@ GEM
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unicode-display_width (1.4.0)
+    url (0.3.2)
     yard (0.9.14)
 
 PLATFORMS
@@ -126,17 +137,11 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16.2)
-  codeclimate-test-reporter
-  danger
-  danger-lgtm
   flickrb!
-  pry
   pry-byebug (~> 3.6)
   rake (~> 10.0)
-  rspec
-  rspec_junit_formatter
+  rspec (~> 3.6)
   rubocop (~> 0.57)
-  simplecov
   yard
 
 BUNDLED WITH
