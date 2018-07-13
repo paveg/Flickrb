@@ -13,7 +13,7 @@ else
 end
 
 SimpleCov.start do
-  %w[/spec/ /vendor/].each { |path| add_filter(path) }
+  %w[/vendor/].each { |path| add_filter(path) }
 end
 
 def fixture_path
