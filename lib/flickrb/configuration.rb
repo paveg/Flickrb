@@ -15,7 +15,7 @@ module Flickrb
 
     class << self
       # @return [Array]
-      def keys
+      def attr_keys
         @keys ||= %i[client_key client_secret]
       end
     end
@@ -37,7 +37,7 @@ module Flickrb
     # @return [Hash]
     def options
       Hash[
-        Flickrb::Configuration.keys.map do |key|
+        Flickrb::Configuration.attr_keys.map do |key|
           [key, instance_variable_get(:"@#{key}")]
         end
       ]

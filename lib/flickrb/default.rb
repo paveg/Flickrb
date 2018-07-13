@@ -8,7 +8,7 @@ module Flickrb
     class << self
       # @return [Hash]
       def options
-        Hash[Flickrb::Configuration.keys.map { |key| [key, send(key)] }]
+        Hash[Flickrb::Configuration.attr_keys.map { |key| [key, send(key)] }]
       end
 
       # @return [String]
