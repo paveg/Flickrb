@@ -56,10 +56,9 @@ jobs:
             bundle exec rspec --format progress \
                             --format RspecJunitFormatter \
                             --out $CIRCLE_ARTIFACTS/rspec.xml \
-                            --format progress \
-                            $TEST_FILES
+                            $TEST_FILES; ret=$?
             cp -r $CIRCLE_ARTIFACTS/coverage ./coverage
-            ./cc-test-reporter after-build --coverage-input-type simplecov --exit-code $?
+            ./cc-test-reporter after-build -t simplecov --exit-code $ret
 
       # collect reports
       - store_test_results:
