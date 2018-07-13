@@ -6,7 +6,7 @@ describe Flickrb::Default do
   describe '.options' do
     subject { described_class.options }
     it 'returns a hash with the same keys as Flickrb::Configuration' do
-      expect(subject.keys).to eq(Flickrb::Configuration.keys)
+      expect(subject.keys).to eq(Flickrb::Configuration.attr_keys)
     end
   end
   describe '.client_key' do

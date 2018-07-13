@@ -13,7 +13,7 @@ module Flickrb
       @access_token  = options[:access_token]
       @refresh_token = options[:refresh_token]
 
-      Flickrb::Configuration.keys.each do |key|
+      Flickrb::Configuration.attr_keys.each do |key|
         instance_variable_set(
           :"@#{key}", options[key] || Flickrb.instance_variable_get(:"@#{key}")
         )
