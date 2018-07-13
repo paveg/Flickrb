@@ -7,14 +7,17 @@ group :development do
   gem 'yard'
 end
 
-group :test do
-  gem 'codeclimate-test-reporter', require: false
+group :ci do
   gem 'danger', require: false
   gem 'danger-lgtm', require: false
-  gem 'rspec'
-  gem 'rspec_junit_formatter'
-  gem 'simplecov', require: false
+  gem 'rspec_junit_formatter', require: false
+  gem 'codeclimate-test-reporter', require: false
 end
 
+group :ci, :development, :test do
+  gem 'rspec'
+  gem 'simplecov', require: false
+  gem 'codecov'
+end
 # Specify your gem's dependencies in flickrb.gemspec
 gemspec
