@@ -40,7 +40,7 @@ module Flickrb
     def request(method, path, params = {})
       connection.send(method.to_sym, path, params).env
     rescue Faraday::Error::ClientError
-      # TODO: raise error
+      raise 'client error' # TODO: raise error
     end
   end
 end

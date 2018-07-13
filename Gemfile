@@ -2,7 +2,19 @@
 
 source 'https://rubygems.org'
 
-git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
+group :development do
+  gem 'pry'
+  gem 'yard'
+end
+
+group :test do
+  gem 'codeclimate-test-reporter', require: false
+  gem 'danger', require: false
+  gem 'danger-lgtm', require: false
+  gem 'rspec'
+  gem 'rspec_junit_formatter'
+  gem 'simplecov', require: false
+end
 
 # Specify your gem's dependencies in flickrb.gemspec
 gemspec
