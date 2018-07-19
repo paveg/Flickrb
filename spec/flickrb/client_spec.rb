@@ -7,7 +7,9 @@ describe Flickrb::Client do
     subject { described_class.new(options) }
 
     before do
-      ENV.each_key { |env_key| ENV.delete(env_key) if env_key.start_with?('FLICKR') }
+      ENV.each_key do |env_key|
+        ENV.delete(env_key) if env_key.start_with?('FLICKR')
+      end
     end
 
     context 'has no argument' do

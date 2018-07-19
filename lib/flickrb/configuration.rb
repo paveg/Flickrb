@@ -16,7 +16,7 @@ module Flickrb
     class << self
       # @return [Array]
       def attr_keys
-        @keys ||= %i[client_key client_secret]
+        @attr_keys ||= %i[client_key client_secret]
       end
     end
 
