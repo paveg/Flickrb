@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c70f4731a14b4593b86cc7c85c7ee740)](https://app.codacy.com/app/paveg/Flickrb?utm_source=github.com&utm_medium=referral&utm_content=paveg/Flickrb&utm_campaign=badger)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/4c2650addf8e32680290/test_coverage)](https://codeclimate.com/github/paveg/Flickrb/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/4c2650addf8e32680290/maintainability)](https://codeclimate.com/github/paveg/Flickrb/maintainability)
 
