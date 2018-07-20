@@ -72,6 +72,7 @@ Gemfile.lock
 .idea/
 .idea/**/workspace.xml
 .idea/**/tasks.xml
+.idea/**/tasks.xml
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
@@ -189,4 +190,9 @@ typings/
 # Serverless directories
 .serverless
 
+# direnv
+.envrc
+
+# for mac
+.DS_Store
 
