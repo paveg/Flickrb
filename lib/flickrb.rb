@@ -6,6 +6,10 @@ require 'flickrb/configuration'
 require 'active_support/core_ext/hash'
 
 module Flickrb
+  END_POINT = 'https://www.flickr.com/services'
+  REST_PATH = "#{END_POINT}rest/"
+  REQUEST_TOKEN_PATH = "#{END_POINT}/oauth/request_token"
+
   class << self
     include Flickrb::Configuration
 

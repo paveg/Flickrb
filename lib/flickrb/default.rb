@@ -25,12 +25,6 @@ module Flickrb
       def api_version
         API_VERSION
       end
-
-      # @see https://www.flickr.com/services/api/request.rest.html
-      # @return [String]
-      def endpoint
-        'https://api.flickr.com/services'
-      end
     end
   end
 end

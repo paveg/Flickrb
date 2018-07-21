@@ -9,10 +9,6 @@ module Flickrb
 
     attr_accessor :client_key
 
-    unless defined?(Flickrb::Configuration::ENDPOINT)
-      ENDPOINT = (ENV['FLICKR_ENDPOINT'] || Flickrb::Default.endpoint).freeze
-    end
-
     class << self
       # @return [Array]
       def attr_keys

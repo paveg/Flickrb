@@ -6,7 +6,7 @@ require 'flickrb'
 require 'simplecov'
 require 'pry'
 
-if ENV['CIRCLE_ARTIFACTS']
+if ENV.fetch('CIRCLE_ARTIFACTS', nil)
   SimpleCov.coverage_dir(File.join(ENV['CIRCLE_ARTIFACTS'], 'coverage'))
 else
   SimpleCov.coverage_dir('public/coverage')
