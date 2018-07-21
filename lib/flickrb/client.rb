@@ -12,7 +12,6 @@ module Flickrb
     attr_accessor :access_token
 
     OAUTH_VERSION = '1.0'
-    SIGNATURE_METHOD = 'HMAC-SHA1'
 
     def initialize(options = {})
       @api_key = ENV.fetch('FLICKR_CLIENT_KEY', options[:api_key])
@@ -35,9 +34,10 @@ module Flickrb
 
     def oauth_parameter
       {
-        oauth_version: OAUTH_VERSION,
         oauth_nonce: nonce,
         oauth_timestamp: timestamp,
+        oauth_consumer_key: @api_key,
+        oauth_version: OAUTH_VERSION,
         oauth_callback: callback_url
       }
     end
@@ -51,7 +51,7 @@ module Flickrb
     end
 
     def callback_url
-      'http://localhost:3000'
+      'oob'
     end
   end
 end
