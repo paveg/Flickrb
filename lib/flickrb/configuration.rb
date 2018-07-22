@@ -7,12 +7,12 @@ module Flickrb
   module Configuration
     extend Forwardable
 
-    attr_accessor :client_key
+    attr_accessor :api_key
 
     class << self
       # @return [Array]
       def attr_keys
-        @attr_keys ||= %i[client_key client_secret]
+        @attr_keys ||= %i[api_key api_secret]
       end
     end
 
@@ -22,7 +22,7 @@ module Flickrb
     end
 
     def reset!
-      Flickrb::Configuration.each_key do |key|
+      Flickrb::Configuration.attr_keys.each do |key|
         instance_variable_set(:"@#{key}", Flickrb::Default.options[key])
       end
       self
