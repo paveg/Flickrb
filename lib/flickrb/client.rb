@@ -17,7 +17,7 @@ module Flickrb
       @api_key = ENV.fetch('FLICKR_CLIENT_KEY', options[:api_key])
       @api_secret = ENV.fetch('FLICKR_CLIENT_SECRET', options[:api_secret])
       @callback_url = callback_url(options)
-      @access_token  = options[:access_token]
+      @access_token = options[:access_token]
       @refresh_token = options[:refresh_token]
 
       self.proxy = nil

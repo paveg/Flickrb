@@ -6,7 +6,7 @@ module Faraday
   class Request
     class FlickrbOauth2 < Middleware
       def initialize(app, access_token)
-        @app          = app
+        @app = app
         @access_token = access_token
       end
 

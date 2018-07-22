@@ -11,19 +11,32 @@ describe Flickrb do
     end
   end
 
+  describe '#respond_to_missing?' do
+    subject { described_class.respond_to_missing?(method) }
+    context 'when call defined method' do
+      let(:method) { :get }
+      it { is_expected.to be_truthy }
+    end
+
+    context 'when call undefined method' do
+      let(:method) { :undefined_get }
+      it { is_expected.to be_falsey }
+    end
+  end
+
   describe Hash do
     describe '#deep_symbolized_keys' do
       subject { hash.deep_symbolize_keys }
       let(:hash) do
         {
-          key:  [{ moge: 10 }],
+          key: [{ moge: 10 }],
           hoge: [{ hoge: [42] }],
           moge: [10, 20, { hoge: 30 }]
         }
       end
       let(:convert_hash) do
         {
-          key:  [{ moge: 10 }],
+          key: [{ moge: 10 }],
           hoge: [{ hoge: [42] }],
           moge: [10, 20, { hoge: 30 }]
         }
