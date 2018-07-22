@@ -51,7 +51,7 @@ describe Flickrb::Client do
       }
     end
     context 'returns error when has not api key' do
-      let(:test_api_key) { }
+      let(:test_api_key) {}
       it { expect(subject.status).not_to eq(200) }
     end
   end
