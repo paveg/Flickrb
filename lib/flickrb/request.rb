@@ -31,7 +31,7 @@ module Flickrb
 
       @scheme = URI.parse(Flickrb::END_POINT).scheme
       @connection = Faraday.new(Flickrb::END_POINT) do |conn|
-        conn.request :oauth2, @access_token if @access_token
+        conn.request :flickrb_oauth2, @access_token if @access_token
         conn.request :url_encoded
         conn.request :json
         conn.request :oauthenticator_signer, signature_params

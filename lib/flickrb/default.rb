@@ -13,12 +13,12 @@ module Flickrb
 
       # @return [String]
       def client_key
-        ENV['FLICKR_CLIENT_KEY']
+        ENV.fetch('FLICKR_CLIENT_KEY', nil)
       end
 
       # @return [String]
       def client_secret
-        ENV['FLICKR_CLIENT_SECRET']
+        ENV.fetch('FLICKR_CLIENT_SECRET', nil)
       end
 
       # @return [String]

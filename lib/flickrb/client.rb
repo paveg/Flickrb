@@ -9,13 +9,14 @@ module Flickrb
     include Flickrb::Configuration
     include Flickrb::Request
     attr_reader :proxy
-    attr_accessor :access_token
+    attr_reader :access_token
 
     OAUTH_VERSION = '1.0'
 
     def initialize(options = {})
       @api_key = ENV.fetch('FLICKR_CLIENT_KEY', options[:api_key])
       @api_secret = ENV.fetch('FLICKR_CLIENT_SECRET', options[:api_secret])
+      @callback_url = callback_url(options)
       @access_token  = options[:access_token]
       @refresh_token = options[:refresh_token]
 
@@ -27,7 +28,15 @@ module Flickrb
     end
 
     def request_token
-      get(REQUEST_TOKEN_PATH, oauth_parameter)
+      res = get(REQUEST_TOKEN_PATH, oauth_parameter)
+      response_body_hash = hash!(res.body)
+      @oauth_token = response_body_hash[:oauth_token]
+
+      res
+    end
+
+    def authorize
+      get(OAUTH_AUTHORIZE_PATH, oauth_token: @oauth_token)
     end
 
     private
@@ -38,8 +47,12 @@ module Flickrb
         oauth_timestamp: timestamp,
         oauth_consumer_key: @api_key,
         oauth_version: OAUTH_VERSION,
-        oauth_callback: callback_url
+        oauth_callback: @callback_url
       }
+    end
+
+    def callback_url(options)
+      ENV.fetch('FLICKR_CLIENT_CALLBACK_URL', options[:callback_url]) || 'oob'
     end
 
     def nonce
@@ -50,8 +63,8 @@ module Flickrb
       Time.current.to_i
     end
 
-    def callback_url
-      'oob'
+    def hash!(res)
+      res.split('&').map { |s| s.split('=') }.to_h.symbolize_keys
     end
   end
 end

@@ -23,42 +23,6 @@ require 'bundler/setup'
 require 'flickrb'
 require 'pry'
 
-def fixture_path
-  File.expand_path('fixtures', __dir__)
-end
-
-def fixture(file)
-  File.new(fixture_path + '/' + file).read
-end
-
-def a_get(path)
-  a_request(:get, Flickrb::Configuration::ENDPOINT + path)
-end
-
-def a_post(path)
-  a_request(:post, Flickrb::Configuration::ENDPOINT + path)
-end
-
-def a_put(path)
-  a_request(:put, Flickrb::Configuration::ENDPOINT + path)
-end
-
-def a_delete(path)
-  a_request(:delete, Flickrb::Configuration::ENDPOINT + path)
-end
-
-def stub_get(path)
-  stub_request(:get, Flickrb::Configuration::ENDPOINT + path)
-end
-
-def stub_post(path)
-  stub_request(:post, Flickrb::Configuration::ENDPOINT + path)
-end
-
-def stub_put(path)
-  stub_request(:put, Flickrb::Configuration::ENDPOINT + path)
-end
-
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = '.rspec_status'
