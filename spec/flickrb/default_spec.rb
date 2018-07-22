@@ -10,7 +10,7 @@ describe Flickrb::Default do
     end
   end
   describe '.client_key' do
-    subject { described_class.client_key }
+    subject { described_class.api_key }
     after { ENV.delete('FLICKR_CLIENT_KEY') }
 
     it 'returns nil when ENV is not set' do
@@ -26,7 +26,7 @@ describe Flickrb::Default do
   end
 
   describe '.client_secret' do
-    subject { described_class.client_secret }
+    subject { described_class.api_secret }
     after { ENV.delete('FLICKR_CLIENT_SECRET') }
 
     it 'returns nil when ENV is not set' do

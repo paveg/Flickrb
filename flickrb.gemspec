@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'danger-lgtm'
   spec.add_dependency 'faraday', '~> 0.15'
   spec.add_dependency 'faraday_middleware', '~> 0.12'
+  spec.add_dependency 'oauthenticator'
   spec.add_dependency 'rspec_junit_formatter'
   spec.add_dependency 'simplecov'
 

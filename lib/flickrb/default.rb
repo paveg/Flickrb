@@ -12,24 +12,18 @@ module Flickrb
       end
 
       # @return [String]
-      def client_key
-        ENV['FLICKR_CLIENT_KEY']
+      def api_key
+        ENV.fetch('FLICKR_CLIENT_KEY', nil)
       end
 
       # @return [String]
-      def client_secret
-        ENV['FLICKR_CLIENT_SECRET']
+      def api_secret
+        ENV.fetch('FLICKR_CLIENT_SECRET', nil)
       end
 
       # @return [String]
       def api_version
         API_VERSION
-      end
-
-      # @see https://www.flickr.com/services/api/request.rest.html
-      # @return [String]
-      def endpoint
-        'https://api.flickr.com/services'
       end
     end
   end
